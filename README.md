@@ -8,7 +8,7 @@ Bem-vindo ao repositório do projeto fictício Shoptech, um e-commerce especiali
   - [Estrutura do Projeto](#estrutura-do-projeto)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Objetivo do Caso de Estudo](#objetivo-do-caso-de-estudo)
-- [Como Rodar o Projeto](#como-rodar-o-projeto)
+- [Como Executar o Projeto](#como-executar-o-projeto)
 <!-- - [Further Improvements](#further-improvements) -->
 
 ## Sobre o Projeto
