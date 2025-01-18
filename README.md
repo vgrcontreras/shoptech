@@ -29,12 +29,12 @@ O principal objetivo do projeto Shoptech é criar um ambiente completo para:
 ## Tecnologias Utilizadas
 
 - 💻 **Backend**
-  - [Faker](https://fastapi.tiangolo.com/) for the Python backend API, with asynchronous routes.
-  - [SQLAlchemy](https://www.sqlalchemy.org/) for Python SQL database interactions (ORM).
-  - PostgreSQL as the SQL database
-  - Tests with [Pytest](https://docs.pytest.org/en/stable/) and [Testcontainers](https://testcontainers-python.readthedocs.io/en/latest/).
-  - [Pre-commit](https://pre-commit.com/) with [Ruff](https://docs.astral.sh/ruff/) for linting.
-  - CI (Continuous Integration) based on GitHub Actions.
+  - [Faker](https://fastapi.tiangolo.com/) para criação de dados transacionais fictícios da Shoptech.
+  - [SQLAlchemy](https://www.sqlalchemy.org/) para interações com bancos de dados SQL em Python (ORM).
+  - PostgreSQL
+  - Testes com [Pytest](https://docs.pytest.org/en/stable/) e [Testcontainers](https://testcontainers-python.readthedocs.io/en/latest/).
+  - [Pre-commit](https://pre-commit.com/) com [Ruff](https://docs.astral.sh/ruff/) para análises estáticas e formatações de código.
+  - CI (Integração contínua) com GitHub Actions.
 
 - 🌐 **Frontend**
 
@@ -45,4 +45,34 @@ O principal objetivo do projeto Shoptech é criar um ambiente completo para:
 
 ```
 
-## Como Rodar o Projeto
+## Como Executar o Projeto
+
+Antes de rodar o projeto, você precisa ter o Docker Compose instalado. Se ainda não tiver, siga o guia de instalação oficial:
+
+[Como instalar Docker Compose](https://docs.docker.com/compose/install/)
+
+### 1. Clonar o Repositório
+
+Clone o repositório para sua máquina local:
+
+```bash
+git clone git@github.com:vgrcontreras/shoptech.git
+```
+
+### 2. Acesse o repositório do projeto
+
+Depois de clonar o repositório, entre no diretório do projeto:
+
+```bash
+cd shoptech
+```
+
+### 3. Subir os Containers com Docker Compose
+
+Agora, use o Docker Compose para construir e rodar os containers do projeto:
+
+```bash
+docker-compose up --build
+```
+
+Isso irá iniciar todos os serviços necessários para rodar o projeto. Aguarde até que todos os containers estejam em execução.
