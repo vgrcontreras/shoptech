@@ -41,6 +41,9 @@ addopts = '-p no:warnings'
 lint = 'ruff check'
 pre_format = 'ruff check --fix'
 format = 'ruff format'
+pre_test = 'task lint'
+test = 'pytest -x --cov=data -vv'
+post_test = 'coverage html'
 
 
 [build-system]
