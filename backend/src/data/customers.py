@@ -1,6 +1,6 @@
 from faker import Faker
 
-from models.customers import Customer
+from src.models.customers import Customer
 
 fake = Faker(locale='pt-BR')
 
