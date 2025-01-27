@@ -26,12 +26,40 @@ O principal objetivo do projeto Shoptech é criar um ambiente completo para:
 - Aplicar ferramentas e frameworks modernos utilizados no setor, como Python, SQL, dbt, Airflow e mais.
 - Visualizar insights gerados a partir dos dados processados, simulando relatórios para acompanhamento de métricas de negócios.
 
+## Principais Etapas do Projeto
+
+1. Geração de Dados Sintéticos
+
+  Uso de bibliotecas como Faker ou scripts customizados para criar dados realistas.
+
+2. Ingestão de Dados
+  
+  Construção de pipelines para ingestão de dados brutos provenientes de múltiplas fontes simuladas (ex.: logs de navegação, transações, inventário).
+
+3. Transformação de Dados
+
+  Aplicação de processos ETL/ELT para limpeza, normalização e enriquecimento dos dados.
+
+4. Modelagem e Armazenamento
+
+  Design de um Data Warehouse com esquema estrela para análise eficiente.
+
+5. Análise e Visualização
+
+  Criação de dashboards para medir KPIs como:
+
+- Taxa de conversão.
+- Receita total por período.
+- Produtos mais vendidos.
+- Retenção de clientes.
+
 ## Tecnologias Utilizadas
 
 - 💻 **Backend**
   - [Faker](https://fastapi.tiangolo.com/) para criação de dados transacionais fictícios da Shoptech.
   - [SQLAlchemy](https://www.sqlalchemy.org/) para interações com bancos de dados SQL em Python (ORM).
-  - PostgreSQL
+  - [PostgreSQL](https://www.postgresql.org/)
+  - [Alembic](https://alembic.sqlalchemy.org/en/latest/) para migração de banco de dados
   - Testes com [Pytest](https://docs.pytest.org/en/stable/) e [Testcontainers](https://testcontainers-python.readthedocs.io/en/latest/).
   - [Pre-commit](https://pre-commit.com/) com [Ruff](https://docs.astral.sh/ruff/) para análises estáticas e formatações de código.
   - CI (Integração contínua) com GitHub Actions.
