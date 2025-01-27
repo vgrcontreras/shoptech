@@ -5,10 +5,10 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from core.settings import settings
-from core.database import table_registry
+from src.core.settings import settings
+from src.core.database import table_registry
 
-from models.customers import Customer
+from src.models.customers import Customer
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
