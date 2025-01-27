@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 from sqlalchemy.orm import Mapped, mapped_column
 
-from core.database import table_registry
+from src.core.database import table_registry
 
 
 @table_registry.mapped_as_dataclass
