@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import registry
 
-from core.settings import settings
+from src.core.settings import settings
 
 table_registry = registry()
 
