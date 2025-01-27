@@ -27,7 +27,7 @@ def upgrade() -> None:
     sa.Column('email', sa.String(), nullable=False),
     sa.Column('phone_number', sa.String(), nullable=False),
     sa.Column('gender', sa.String(), nullable=False),
-    sa.Column('date_of_birth', sa.String(), nullable=False),
+    sa.Column('date_of_birth', sa.Date(), nullable=False),
     sa.Column('address', sa.String(), nullable=False),
     sa.Column('city', sa.String(), nullable=False),
     sa.Column('state', sa.String(), nullable=False),
