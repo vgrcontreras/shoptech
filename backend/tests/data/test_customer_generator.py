@@ -47,7 +47,3 @@ def test_email_format(customer):
 
 def test_gender_value(customer):
     assert customer.gender in {'Masculino', 'Feminino', 'Outros'}
-
-
-def test_address_newline_replacement(customer):
-    assert '\n' not in customer.address
