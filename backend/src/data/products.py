@@ -2,7 +2,7 @@ import random
 
 from faker import Faker
 
-from src.models.products import Product
+from src.models import Product
 
 fake = Faker()
 
@@ -80,7 +80,3 @@ def generate_products_data():
     )
 
     return products
-
-
-if __name__ == '__main__':
-    print(generate_products_data())
