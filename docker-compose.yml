@@ -6,10 +6,10 @@ services:
     entrypoint: ./entrypoint.sh
     container_name: backend
     environment:
-      DATABASE_URL: postgresql+psycopg2://user:password@db:5432/shoptech
+      DATABASE_URL: postgresql+psycopg://user:password@db:5432/shoptech
     networks:
       - network
-    depends_on:
+    depends_on: # ensures backend service start only after the db service
       - db
 
   db:
