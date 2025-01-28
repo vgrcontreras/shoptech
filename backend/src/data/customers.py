@@ -13,10 +13,10 @@ def generate_customer_data() -> Customer:
         phone_number=fake.cellphone_number(),
         gender=fake.random_element(['Masculino', 'Feminino', 'Outros']),
         date_of_birth=fake.date_of_birth(minimum_age=18, maximum_age=50),
-        address=fake.address().replace('\n', ', '),
+        address=fake.street_address(),
         city=fake.city(),
-        state=fake.bairro(),
-        country=fake.country(),
+        state=fake.estado_nome(),
+        country='Brasil',
         postal_code=fake.postcode(),
         created_at=fake.date_time_this_decade(),
     )
