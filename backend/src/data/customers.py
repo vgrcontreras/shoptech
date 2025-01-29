@@ -11,7 +11,9 @@ def generate_customer_data() -> Customer:
         last_name=fake.last_name(),
         email=fake.safe_email(),
         phone_number=fake.cellphone_number(),
-        gender=fake.random_element(['Masculino', 'Feminino', 'Outros']),
+        gender=fake.random_element(
+            elements=['Masculino', 'Feminino', 'Outros']
+        ),
         date_of_birth=fake.date_of_birth(minimum_age=18, maximum_age=50),
         address=fake.street_address(),
         city=fake.city(),
