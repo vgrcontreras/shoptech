@@ -19,7 +19,7 @@ jobs:
         run: pip install poetry
 
       - name: Install Dependencies
-        run: poetry install
+        run: poetry install --no-root
         working-directory: backend
 
       - name: Run Code Linter
