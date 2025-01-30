@@ -1,5 +1,7 @@
 # Shoptech: Projeto de Caso de Estudo em Engenharia de Dados
 
+![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+
 Bem-vindo ao repositório do projeto fictício Shoptech, um e-commerce especializado em eletrônicos e gadgets, criado para fins de estudo e aplicação prática de conceitos de Engenharia de Dados.
 
 ## Conteúdos
@@ -7,6 +9,7 @@ Bem-vindo ao repositório do projeto fictício Shoptech, um e-commerce especiali
 - [Sobre o Projeto](#sobre-projeto)
   - [Estrutura do Projeto](#estrutura-do-projeto)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+  - [Principais Etapas do Projeto](#principais-etapas-do-projeto)
 - [Objetivo do Caso de Estudo](#objetivo-do-caso-de-estudo)
 - [Como Executar o Projeto](#como-executar-o-projeto)
 <!-- - [Further Improvements](#further-improvements) -->
@@ -28,30 +31,25 @@ O principal objetivo do projeto Shoptech é criar um ambiente completo para:
 
 ## Principais Etapas do Projeto
 
-1. Geração de Dados Sintéticos
+### 1. Geração de Dados Sintéticos
 
-  Uso de bibliotecas como Faker ou scripts customizados para criar dados realistas.
+  Uso de bibliotecas como Faker para criar dados realistas.
 
-2. Ingestão de Dados
+### 2. Ingestão de Dados
   
   Construção de pipelines para ingestão de dados brutos provenientes de múltiplas fontes simuladas (ex.: logs de navegação, transações, inventário).
 
-3. Transformação de Dados
+### 3. Transformação de Dados
 
-  Aplicação de processos ETL/ELT para limpeza, normalização e enriquecimento dos dados.
+  Aplicação de processos ELT (Extract, Load, Transform) para limpeza, normalização e enriquecimento dos dados.
 
-4. Modelagem e Armazenamento
+### 4. Modelagem e Armazenamento
 
   Design de um Data Warehouse com esquema estrela para análise eficiente.
 
-5. Análise e Visualização
+### 5. Análise e Visualização
 
-  Criação de dashboards para medir KPIs como:
-
-- Taxa de conversão.
-- Receita total por período.
-- Produtos mais vendidos.
-- Retenção de clientes.
+  Criação de consultas com dados agregados e KPI's, disponibilizando no PowerBI e front-end com Streamlit
 
 ## Tecnologias Utilizadas
 
@@ -65,6 +63,8 @@ O principal objetivo do projeto Shoptech é criar um ambiente completo para:
   - CI (Integração contínua) com GitHub Actions.
 
 - 🌐 **Frontend**
+  - [Streamlit](https://streamlit.io/) para criação de interface gráfica (front-end)
+  - [PowerBI](https://www.microsoft.com/pt-br/power-platform/products/power-bi/desktop?msockid=12d6e5ad5f236c3812eff1f35e926dc6) para criação de dashboards com gráficos e KPI's
 
 
 #### Estrutura do Projeto
@@ -100,7 +100,7 @@ cd shoptech
 Agora, use o Docker Compose para construir e rodar os containers do projeto:
 
 ```bash
-docker-compose up --build
+docker-compose up -d --build
 ```
 
 Isso irá iniciar todos os serviços necessários para rodar o projeto. Aguarde até que todos os containers estejam em execução.
