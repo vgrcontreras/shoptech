@@ -13,6 +13,7 @@ sqlalchemy = "^2.0.37"
 alembic = "^1.14.0"
 pydantic-settings = "^2.7.1"
 psycopg = {extras = ["binary"], version = "^3.2.4"}
+pydantic = {extras = ["email"], version = "^2.10.6"}
 
 
 [tool.poetry.group.dev.dependencies]
