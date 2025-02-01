@@ -63,7 +63,9 @@ def create_order_value_data(
 
 def create_payment_status() -> str:
     payment_status = random.choices(
-        population=['Paid', 'Pending', 'Failed'], weights=[0.7, 0.2, 0.1], k=1
+        population=['Paid', 'Pending', 'Failed'],
+        weights=[0.85, 0.1, 0.05],
+        k=1,
     )
 
     return payment_status[0]
@@ -75,7 +77,7 @@ def create_status_data(payment_status):
     else:
         status = random.choices(
             population=['Processing', 'Shipped', 'Delivered', 'Cancelled'],
-            weights=[0.1, 0.1, 0.7, 0.1],
+            weights=[0.05, 0.1, 0.8, 0.05],
             k=1,
         )[0]
 
@@ -158,7 +160,7 @@ def generate_orders_data():
         payment_status=payment_status,
         status=status,
         payment_method=fake.random_element(
-            elements=['Credit Card', 'PayPal', 'Bank Transfer']
+            elements=['Credit Card', 'Pix', 'Bank Transfer', 'Bank Slip']
         ),
         shipping_method=shipping_method,
         shipping_fee=shipping_fee,
