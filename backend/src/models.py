@@ -1,10 +1,37 @@
 from datetime import date, datetime
+from enum import Enum
 from typing import List
 
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, registry, relationship
 
 table_registry = registry()
+
+
+class PaymentStatusState(str, Enum):
+    paid = 'Paid'
+    pending = 'Pending'
+    failed = 'Failed'
+
+
+class StatusState(str, Enum):
+    pending = 'Pending'
+    processing = 'Processing'
+    shipped = 'Shipped'
+    delivered = 'Delivered'
+    cancelled = 'Cancelled'
+
+
+class PaymentMethodState(str, Enum):
+    credit_card = 'Credit Card'
+    pix = 'Pix'
+    bank_transfer = 'Bank Transfer'
+    bank_slip = 'Bank Slip'
+
+
+class ShippingMethodState(str, Enum):
+    standard = 'Standard'
+    express = 'Express'
 
 
 @table_registry.mapped_as_dataclass
@@ -52,10 +79,12 @@ class Order:
     order_date: Mapped[date] = mapped_column(nullable=False)
     products_quantity: Mapped[int] = mapped_column(nullable=False)
     order_value: Mapped[float] = mapped_column(nullable=False)
-    payment_status: Mapped[str] = mapped_column(nullable=False)
-    status: Mapped[str] = mapped_column(nullable=False)
-    payment_method: Mapped[str] = mapped_column(nullable=False)
-    shipping_method: Mapped[str] = mapped_column(nullable=False)
+    payment_status: Mapped[PaymentStatusState] = mapped_column(nullable=False)
+    status: Mapped[StatusState] = mapped_column(nullable=False)
+    payment_method: Mapped[PaymentMethodState] = mapped_column(nullable=False)
+    shipping_method: Mapped[ShippingMethodState] = mapped_column(
+        nullable=False
+    )
     shipping_fee: Mapped[float] = mapped_column(nullable=False)
     shipping_date: Mapped[date] = mapped_column(nullable=True)
     estimated_delivery_date: Mapped[date] = mapped_column(nullable=True)
