@@ -1,14 +1,5 @@
 from datetime import date, datetime
 
-import pytest
-
-from src.data.customers import generate_customer_data
-
-
-@pytest.fixture
-def customer():
-    return generate_customer_data()
-
 
 def test_customer_structure_not_empty(customer):
     assert customer.first_name

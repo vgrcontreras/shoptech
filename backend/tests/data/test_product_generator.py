@@ -1,14 +1,8 @@
-import pytest
 from faker import Faker
 
-from src.data.products import brands_by_category, generate_products_data
+from src.data.products import brands_by_category
 
 fake = Faker()
-
-
-@pytest.fixture
-def product():
-    return generate_products_data()
 
 
 def test_product_structure_not_empty(product):
