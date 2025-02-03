@@ -1,7 +1,8 @@
 from datetime import date, datetime
 
 from sqlalchemy import select
-from src.models import Customer
+
+from backend.src.models import Customer
 
 
 def test_create_customer(session):

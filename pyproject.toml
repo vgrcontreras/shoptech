@@ -45,7 +45,7 @@ lint = 'ruff check'
 pre_format = 'ruff check --fix'
 format = 'ruff format'
 pre_test = 'task lint'
-test = 'pytest -x --cov=src -vv'
+test = 'pytest -x --cov=backend/src -vv'
 post_test = 'coverage html'
 
 

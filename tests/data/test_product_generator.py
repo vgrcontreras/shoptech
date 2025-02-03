@@ -1,5 +1,6 @@
 from faker import Faker
-from src.data.products import brands_by_category
+
+from backend.src.data.products import brands_by_category
 
 fake = Faker()
 
