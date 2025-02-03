@@ -1,7 +1,6 @@
 import random
 
 from faker import Faker
-
 from src.models import Product
 
 fake = Faker()

@@ -1,5 +1,4 @@
 from faker import Faker
-
 from src.models import Customer
 
 fake = Faker(locale='pt-BR')

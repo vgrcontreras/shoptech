@@ -1,7 +1,6 @@
 from datetime import date, datetime
 
 from sqlalchemy import select
-
 from src.models import Customer
 
 

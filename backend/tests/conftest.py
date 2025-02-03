@@ -2,7 +2,6 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.pool import StaticPool
-
 from src.data.customers import generate_customer_data
 from src.data.products import generate_products_data
 from src.models import table_registry

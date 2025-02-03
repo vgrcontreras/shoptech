@@ -1,5 +1,4 @@
 from sqlalchemy.orm import Session
-
 from src.data.customers import generate_customer_data
 from src.data.orders import generate_orders_data
 from src.data.products import generate_products_data
