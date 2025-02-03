@@ -1,10 +1,11 @@
 from sqlalchemy.orm import Session
-from src.data.customers import generate_customer_data
-from src.data.orders import generate_orders_data
-from src.data.products import generate_products_data
-from src.database import get_session
-from src.models import Customer, Order, Product
-from src.schemas import CustomerSchema, OrderSchema, ProductSchema
+
+from backend.src.data.customers import generate_customer_data
+from backend.src.data.orders import generate_orders_data
+from backend.src.data.products import generate_products_data
+from backend.src.database import get_session
+from backend.src.models import Customer, Order, Product
+from backend.src.schemas import CustomerSchema, OrderSchema, ProductSchema
 
 
 def populate_customers_table(session: Session, num_records: int) -> None:

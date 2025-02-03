@@ -4,8 +4,9 @@ from datetime import date, timedelta
 from faker import Faker
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
-from src.database import engine
-from src.models import Customer, Order, Product
+
+from backend.src.database import engine
+from backend.src.models import Customer, Order, Product
 
 fake = Faker()
 

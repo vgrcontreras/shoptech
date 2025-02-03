@@ -2,7 +2,8 @@ from contextlib import contextmanager
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, registry
-from src.settings import settings
+
+from backend.src.settings import settings
 
 table_registry = registry()
 
