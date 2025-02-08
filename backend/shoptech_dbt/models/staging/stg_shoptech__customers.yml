@@ -1,0 +1,49 @@
+models:
+  - name: stg_shoptech__customers
+    description: Customer data with basic cleaning and transformation applied, one row per customer.
+    columns:
+      - name: customer_id
+        description: Unique id for each customer
+        data_tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: '{{ doc("first_name") }}'
+
+      - name: last_name
+        description: '{{ doc("last_name") }}'
+
+      - name: email
+        description: '{{ doc("email") }}'
+
+      - name: phone_number
+        description: '{{ doc("phone_number") }}'
+
+      - name: gender
+        description: '{{ doc("gender") }}'
+        data_tests:
+          - accepted_values:
+              values: ["Outros", "Masculino", "Feminino"]
+
+      - name: date_of_birth
+        description: '{{ doc("date_of_birth") }}'
+
+      - name: address
+        description: '{{ doc("address") }}'
+
+      - name: city
+        description: '{{ doc("city") }}'
+
+      - name: state
+        description: '{{ doc("state") }}'
+
+      - name: country
+        description: '{{ doc("country") }}'
+
+      - name: postal_code
+        description: '{{ doc("postal_code") }}'
+
+      - name: created_at
+        description: '{{ doc("created_at") }}'
+

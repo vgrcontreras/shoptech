@@ -1,0 +1,86 @@
+models:
+  - name: stg_shoptech__orders
+    description: Raw orders data (1:1), one row per order
+    columns:
+      - name: id
+        description: '{{ doc("id") }}' 
+        data_tests:
+          - unique
+          - not_null
+      
+      - name: customer_id
+        description: '{{ doc("customer_id") }}'
+        data_tests: 
+          - not_null
+          - relationships:
+              to: ref('stg_shoptech__customers')
+              field: customer_id
+      
+      - name: product_id
+        description: '{{ doc("product_id") }}'
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_shoptech__products')
+              field: product_id
+
+      - name: order_date
+        description: '{{ doc("order_date") }}'
+        data_tests:
+          - not_null
+
+      - name: products_quantity
+        description: '{{ doc("products_quantity") }}'
+        data_tests:
+          - not_null
+          - not_negative_and_zero_values
+      
+      - name: order_value
+        description: '{{ doc("order_value") }}'
+        data_tests:
+          - not_null
+          - not_negative_and_zero_values
+
+      - name: payment_status
+        description: '{{ doc("payment_status") }}'
+        data_tests:
+          - not_null
+          - accepted_values: 
+              values: ['paid', 'pending', 'failed']
+
+      - name: status
+        description: '{{ doc("status") }}'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['pending', 'processing', 'shipped', 'delivered', 'cancelled']
+      
+      - name: payment_method
+        description: '{{ doc("payment_method") }}'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['credit_card', 'pix', 'bank_transfer', 'bank_slip']
+
+      - name: shipping_method
+        description: '{{ doc("shipping_method") }}'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['standard', 'express']
+
+      - name: shipping_fee
+        description: '{{ doc("shipping_fee") }}'
+        data_tests:
+          - not_negative_and_zero_values
+
+      - name: shipping_date
+        description: '{{ doc("shipping_date") }}'
+
+      - name: estimated_delivery_date
+        description: '{{ doc("estimated_delivery_date") }}'
+
+      - name: delivery_date
+        description: '{{ doc("delivery_date") }}'
+
+       

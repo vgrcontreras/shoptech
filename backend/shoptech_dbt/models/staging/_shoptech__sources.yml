@@ -1,0 +1,114 @@
+version: 2
+
+sources:
+  - name: shoptech
+    database: shoptech
+    schema: public
+    tables:
+      - name: customers
+        columns:
+          - name: id
+            description: Unique id for each customer
+
+          - name: first_name
+            description: "{{ doc('first_name') }}"
+
+          - name: last_name
+            description: "{{ doc('last_name') }}"
+
+          - name: email
+            description: "{{ doc('email') }}"
+
+          - name: phone_number
+            description: "{{ doc('phone_number') }}"
+          
+          - name: gender
+            description: "{{ doc('gender') }}"
+
+          - name: date_of_birth
+            description: "{{ doc('date_of_birth') }}"
+
+          - name: address
+            description: "{{ doc('address') }}"
+
+          - name: city
+            description: "{{ doc('city') }}"
+
+          - name: state
+            description: "{{ doc('state') }}"
+
+          - name: country
+            description: "{{ doc('country') }}"
+
+          - name: postal_code
+            description: "{{ doc('postal_code') }}"
+
+          - name: created_at
+            description: "{{ doc('created_at') }}"
+
+      - name: products
+        description: One record per product
+        columns:
+          - name: id
+            description: Unique id for each product
+
+          - name: name
+            description: Product name per product id
+          
+          - name: category
+            description: '{{ doc("category") }}'
+
+          - name: sub_category
+            description: '{{ doc("sub_category") }}'
+
+          - name: brand
+            description: '{{ doc("brand") }}'
+
+          - name: price
+            description: '{{ doc("price") }}'
+
+
+      - name: orders
+        description: One record per order (consisting of one or more items)
+        columns:
+          - name: id
+            description: '{{ doc("id" )}}'
+
+          - name: customer_id
+            description: '{{ doc("customer_id" )}}'
+
+          - name: product_id
+            description: '{{ doc("product_id" )}}'
+
+          - name: order_date
+            description: '{{ doc("order_date" )}}'
+
+          - name: products_quantity
+            description: '{{ doc("products_quantity" )}}'
+    
+          - name: order_value
+            description: '{{ doc("order_value" )}}'
+
+          - name: payment_status
+            description: '{{ doc("payment_status" )}}'
+
+          - name: status
+            description: '{{ doc("status" )}}'
+
+          - name: payment_method
+            description: '{{ doc("payment_method" )}}'
+
+          - name: shipping_method
+            description: '{{ doc("shipping_method" )}}'  
+
+          - name: shipping_fee
+            description: '{{ doc("shipping_fee" )}}'
+
+          - name: shipping_date
+            description: '{{ doc("shipping_date" )}}'
+
+          - name: estimated_delivery_date
+            description: '{{ doc("estimated_delivery_date" )}}'
+
+          - name: delivery_date
+            description: '{{ doc("delivery_date" )}}'

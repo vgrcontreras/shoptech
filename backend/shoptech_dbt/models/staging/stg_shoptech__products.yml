@@ -1,0 +1,36 @@
+models:
+  - name: stg_shoptech__products
+    description: Raw product data, one row per product id
+    columns:
+      - name: product_id
+        description: Unique id for each product
+        data_tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: Product name per product id
+        data_tests:
+          - not_null
+      
+      - name: category
+        description: '{{ doc("category") }}'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Audio and Wearables', 'Cameras and Accessories', 'Computers and Accessories','Gaming', 'Mobile Devices', 'Smart Home Devices']
+      
+      - name: sub_category
+        description: '{{ doc("sub_category") }}'
+        data_tests:
+          - not_null
+
+      - name: brand
+        description: '{{ doc("brand") }}'
+        data_tests:
+          - not_null
+
+      - name: price
+        description: '{{ doc("price") }}'
+        data_tests:
+          - not_null
