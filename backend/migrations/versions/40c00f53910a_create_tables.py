@@ -1,8 +1,8 @@
-"""create tables!
+"""create tables
 
-Revision ID: 1ceeeaf2cb5b
+Revision ID: 40c00f53910a
 Revises: 
-Create Date: 2025-01-29 18:03:56.914143
+Create Date: 2025-02-03 12:58:49.882234
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '1ceeeaf2cb5b'
+revision: str = '40c00f53910a'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -52,10 +52,10 @@ def upgrade() -> None:
     sa.Column('order_date', sa.Date(), nullable=False),
     sa.Column('products_quantity', sa.Integer(), nullable=False),
     sa.Column('order_value', sa.Float(), nullable=False),
-    sa.Column('payment_status', sa.String(), nullable=False),
-    sa.Column('status', sa.String(), nullable=False),
-    sa.Column('payment_method', sa.String(), nullable=False),
-    sa.Column('shipping_method', sa.String(), nullable=False),
+    sa.Column('payment_status', sa.Enum('paid', 'pending', 'failed', name='paymentstatusstate'), nullable=False),
+    sa.Column('status', sa.Enum('pending', 'processing', 'shipped', 'delivered', 'cancelled', name='statusstate'), nullable=False),
+    sa.Column('payment_method', sa.Enum('credit_card', 'pix', 'bank_transfer', 'bank_slip', name='paymentmethodstate'), nullable=False),
+    sa.Column('shipping_method', sa.Enum('standard', 'express', name='shippingmethodstate'), nullable=False),
     sa.Column('shipping_fee', sa.Float(), nullable=False),
     sa.Column('shipping_date', sa.Date(), nullable=True),
     sa.Column('estimated_delivery_date', sa.Date(), nullable=True),
