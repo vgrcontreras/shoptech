@@ -13,6 +13,7 @@ renamed as (
         ,name as product_name
         ,category
         ,sub_category
+        ,brand
         ,price
     from
         source
