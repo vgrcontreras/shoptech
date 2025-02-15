@@ -4,9 +4,8 @@ from datetime import date, timedelta
 from faker import Faker
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
-
-from backend.src.database import engine
-from backend.src.models import Customer, Order, Product
+from src.database import engine
+from src.models import Customer, Order, Product
 
 fake = Faker()
 
@@ -50,13 +49,11 @@ def create_order_value_data(
         select(Product).where(Product.id == product_id)
     )
 
-    product_value = db_product.price
+    product_price = db_product.price
 
-    product_margin = (products_quantity * product_value) * round(
-        random.uniform(0.01, 1), 2
-    )
+    product_margin = product_price * round(random.uniform(0.1, 1), 2)
 
-    order_value = product_value + product_margin
+    order_value = (product_price + product_margin) * products_quantity
 
     return order_value
 

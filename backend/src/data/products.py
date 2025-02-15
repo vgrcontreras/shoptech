@@ -1,8 +1,7 @@
 import random
 
 from faker import Faker
-
-from backend.src.models import Product
+from src.models import Product
 
 fake = Faker()
 

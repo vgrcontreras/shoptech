@@ -2,8 +2,7 @@ from datetime import date, datetime
 from typing import Optional
 
 from pydantic import BaseModel, ConfigDict, EmailStr
-
-from backend.src.models import (
+from src.models import (
     PaymentMethodState,
     PaymentStatusState,
     ShippingMethodState,

@@ -7,6 +7,15 @@ class Settings(BaseSettings):
     )
 
     DATABASE_URL: str = 'sqlite:///database.db'
+    DB_HOST: str
+    DB_PORT: str
+    DB_USER: str
+    DB_PASSWORD: str
+    DB_NAME: str
+    DB_SCHEMA: str
+    DB_THREADS: str
+    DB_TYPE: str
+    DBT_PROFILES_DIR: str
 
 
 settings = Settings()
