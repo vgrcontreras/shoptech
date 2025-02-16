@@ -1,0 +1,56 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    entrypoint: ./entrypoint.sh
+    container_name: backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://user:password@db:5432/shoptech
+    networks:
+      - network
+    depends_on: # ensures backend service start only after the db service
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:latest
+    container_name: db
+    restart: always
+    ports:
+      - "15432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - network
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: shoptech
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d shoptech || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: adminpassword
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - network
+
+
+networks:
+  network:
+    driver: bridge
+
+volumes:
+  postgres_data:
