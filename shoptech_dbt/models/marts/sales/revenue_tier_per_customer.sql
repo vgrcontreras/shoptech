@@ -9,7 +9,8 @@ total_revenue_per_customer_tier as (
 		,sum(order_value::numeric) as total_revenue
 		,NTILE(5) OVER (ORDER BY sum(order_value) DESC) AS group_number
 	from
-		staging.stg_shoptech__orders
+		{{ ref('stg_shoptech__orders') }}
+		-- staging.stg_shoptech__orders
 	group by customer_id
 	order by total_revenue desc
 

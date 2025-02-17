@@ -8,7 +8,8 @@ year_per_order_id as (
 		id,
 		extract(year from order_date) as year
 	from
-		staging.stg_shoptech__orders
+		{{ ref('stg_shoptech__orders') }}
+		-- staging.stg_shoptech__orders
 
 ),
 

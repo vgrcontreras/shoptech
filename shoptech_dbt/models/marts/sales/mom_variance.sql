@@ -6,7 +6,8 @@ select
     id
     ,extract(month from order_date) as order_month
 from
-    staging.stg_shoptech__orders
+	{{ ref('stg_shoptech__orders') }}
+    -- staging.stg_shoptech__orders
 where 1=1
 	-- WHERE CONDITION TO FILTER ONLY VALUES FOR CURRENT YEAR
 	and date_part('year', order_date) = date_part('year', CURRENT_DATE)
