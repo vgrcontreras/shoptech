@@ -1,12 +1,12 @@
 shoptech_dbt:
   outputs:
     dev:
-      dbname: 'shoptech'
-      host: 'localhost'
-      pass: 'qwerty1234'
+      dbname: shoptech
+      host: db
+      pass: password
       port: 5432
-      schema: 'public'
+      schema: public
       threads: 1
-      type: 'postgres'
-      user: 'postgres'
+      type: postgres
+      user: user
   target: dev

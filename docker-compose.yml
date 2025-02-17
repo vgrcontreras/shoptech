@@ -9,7 +9,7 @@ services:
       DATABASE_URL: postgresql+psycopg://user:password@db:5432/shoptech
     networks:
       - network
-    depends_on: # ensures backend service start only after the db service
+    depends_on:
       db:
         condition: service_healthy
 
@@ -44,6 +44,20 @@ services:
       - "8080:80"
     depends_on:
       - db
+    networks:
+      - network
+
+  dbt:
+    build:
+      context: ./shoptech_dbt
+      dockerfile: Dockerfile
+    entrypoint: ./entrypoint.sh
+    container_name: dbt
+    depends_on:
+      db:
+        condition: service_healthy
+      backend:
+        condition: service_completed_successfully
     networks:
       - network
 
