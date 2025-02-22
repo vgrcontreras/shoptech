@@ -6,5 +6,7 @@ repos:
     # Run the linter.
     - id: ruff
       args: [ --fix ]
+      exclude: "^(frontend/|backend/migrations/)"
     # Run the formatter.
     - id: ruff-format
+      exclude: "^(frontend/|backend/migrations/)"
