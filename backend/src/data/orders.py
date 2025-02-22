@@ -11,17 +11,19 @@ fake = Faker()
 
 
 def create_customer_id_data(session: Session) -> int:
-    customers_row_count = session.query(func.count(Customer.id)).scalar()
+    max_customer_row = session.query(func.max(Customer.id)).scalar()
+    min_customer_row = session.query(func.min(Customer.id)).scalar()
 
-    customer_id = fake.random_int(min=1, max=customers_row_count)
+    customer_id = fake.random_int(min=min_customer_row, max=max_customer_row)
 
     return customer_id
 
 
 def create_product_id_data(session: Session) -> int:
-    products_row_count = session.query(func.count(Product.id)).scalar()
+    max_product_row = session.query(func.max(Product.id)).scalar()
+    min_product_row = session.query(func.min(Product.id)).scalar()
 
-    product_id = fake.random_int(min=1, max=products_row_count)
+    product_id = fake.random_int(min=min_product_row, max=max_product_row)
 
     return product_id
 
