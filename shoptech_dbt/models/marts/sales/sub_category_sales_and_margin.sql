@@ -10,7 +10,8 @@ fct_orders as (
 		,round(orders.order_value::numeric, 2) as total_selling_order_value
 		,(orders.products_quantity * products.price) as total_buying_order_value
 	from
-		staging.stg_shoptech__orders orders
+		{{ ref('stg_shoptech__orders') }} orders
+		-- staging.stg_shoptech__orders orders
 	inner join
 		staging.stg_shoptech__products products
 		on orders.product_id = products.product_id

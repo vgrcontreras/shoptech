@@ -50,7 +50,7 @@ tb_yoy_variance as (
 tb_rounded_yoy_variance as (
 
 	select
-		year
+		cast(year as integer) as ano
 		,total_order
 		,previous_total_order
 		,round(percentage_variance, 2) as yoy

@@ -4,8 +4,8 @@ source as (
 
     select *
 	from
-		staging.stg_shoptech__orders
--- 		{{ ref('stg_shoptech__orders') }}
+		-- staging.stg_shoptech__orders
+		{{ ref('stg_shoptech__orders') }}
 
 ),
 

@@ -25,7 +25,7 @@ total_orders_per_customer as (
 select 
 	*
 	,rank() over (order by total_orders desc) as rank_total_orders
-	,rank() over (order by avg_order_value) as rank_avg_order_value
+	,rank() over (order by avg_order_value desc) as rank_avg_order_value
 from 
 	total_orders_per_customer
 order by total_orders desc

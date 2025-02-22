@@ -23,7 +23,7 @@ teste2 as (
 
 	select
 		*
-		,((product_selling_price - product_buying_price) / product_buying_price) * 100 as margin
+		,((product_selling_price - product_buying_price) / product_buying_price) as margin
 	from
 		teste
 	
@@ -47,19 +47,8 @@ select
 	product_name
 	,total_orders
 	,total_value_sold
-	,round(avg_margin, 2) avg_margin
+	,avg_margin avg_margin
 	,RANK() OVER(ORDER BY avg_margin DESC) as ranking_margin
 from
 	teste3
 order by total_orders desc
-limit 10
-
--- select
--- 	product_name
--- 	,total_orders
--- 	,total_value_sold
--- 	,avg_margin
--- 	,RANK() OVER(ORDER BY avg_margin DESC) as ranking_margin
--- from
--- 	teste3
--- order by total_orders desc

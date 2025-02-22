@@ -50,7 +50,7 @@ from
 select
 	order_month
 	,total_orders
-	,round(percentage_variance * 100, 2) as percentage_variance
+	,percentage_variance as percentage_variance
 	,SUM(total_orders) OVER () as sum_total_orders
 from
 	mom_variance

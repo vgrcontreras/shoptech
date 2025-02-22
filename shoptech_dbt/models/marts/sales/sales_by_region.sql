@@ -34,7 +34,7 @@ sales_by_region_share_percent as (
 	select
 		state
 		,total_orders
-		,round((total_orders / grand_total_orders) * 100, 2) as state_share
+		,round((total_orders / grand_total_orders), 4) as state_share
 	from
 		sales_by_region_share
 	order by total_orders desc

@@ -4,21 +4,20 @@ with
 
 total_revenue_per_customer_tier as (
 
-	select
-		customer_id
-		,sum(order_value::numeric) as total_revenue
-		,NTILE(5) OVER (ORDER BY sum(order_value) DESC) AS group_number
-	from
-		{{ ref('stg_shoptech__orders') }}
-		-- staging.stg_shoptech__orders
-	group by customer_id
-	order by total_revenue desc
+select
+	customer_id
+	,sum(order_value::numeric) as total_revenue
+	,NTILE(5) OVER (ORDER BY sum(order_value) DESC) AS group_number
+from
+	{{ ref('stg_shoptech__orders') }}
+	-- staging.stg_shoptech__orders
+group by customer_id
+order by total_revenue desc
 
 )
 
 select
-	t2.first_name
-	,t2.last_name
+	concat(t2.first_name, ' ', t2.last_name) as complete_name
 	,t2.gender
 	,t2.state
 	,t1.total_revenue
