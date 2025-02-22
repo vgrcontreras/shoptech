@@ -51,7 +51,6 @@ services:
     build:
       context: ./shoptech_dbt
       dockerfile: Dockerfile
-    entrypoint: ./entrypoint.sh
     container_name: dbt
     depends_on:
       db:
@@ -60,7 +59,34 @@ services:
         condition: service_completed_successfully
     networks:
       - network
+    environment:
+      DB_NAME: shoptech
+      DB_HOST: db
+      DB_PASS: password
+      DB_SCHEMA: public
+      DB_PORT: 5432
+      DB_THREADS: 1
+      DB_TYPE: postgres
+      DB_USER: user
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    depends_on:
+      - dbt
+    networks:
+      - network
+    environment:
+      DATABASE_URL: postgresql+psycopg://user:password@db:5432/shoptech
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: shoptech
+      DB_USER: user
+      DB_PASS: password
+    ports:
+      - "8501:8501"
 
 networks:
   network:
