@@ -3,7 +3,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    entrypoint: ./entrypoint.sh
+    # entrypoint: ./entrypoint.sh
     container_name: backend
     environment:
       DATABASE_URL: postgresql+psycopg://user:password@db:5432/shoptech
