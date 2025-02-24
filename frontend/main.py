@@ -6,7 +6,7 @@ from modules.nav import navbar
 
 load_dotenv()
 
-DATABASE_URL = os.getenv('DATABASE_URL')
+STREAMLIT_URL = os.getenv('STREAMLIT_URL', 'localhost:8501')
 
 st.set_page_config(page_title='Página inicial', page_icon='🏠')
 
@@ -30,14 +30,14 @@ Das tendências de vendas e comportamentos dos clientes ao desempenho dos produt
 
 st.subheader('Análises disponíveis')
 
-url_table2 = "http://localhost:8501/customer_profile"
-url_table3 = "http://localhost:8501/mom_variance"
-url_table4 = "http://localhost:8501/revenue_tier_per_customer"
-url_table5 = "http://localhost:8501/sales_by_region"
-url_table6 = "http://localhost:8501/sub_category_sales_and_margin"
-url_table8 = "http://localhost:8501/top10_product_sales"
-url_table9 = "http://localhost:8501/top10_sales_products_with_margin_ranking"
-url_table10 = "http://localhost:8501/yoy_variance"
+url_table2 = f"http://{STREAMLIT_URL}/customer_profile"
+url_table3 = f"http://{STREAMLIT_URL}/mom_variance"
+url_table4 = f"http://{STREAMLIT_URL}/revenue_tier_per_customer"
+url_table5 = f"http://{STREAMLIT_URL}/sales_by_region"
+url_table6 = f"http://{STREAMLIT_URL}/sub_category_sales_and_margin"
+url_table8 = f"http://{STREAMLIT_URL}/top10_product_sales"
+url_table9 = f"http://{STREAMLIT_URL}/top10_sales_products_with_margin_ranking"
+url_table10 = f"http://{STREAMLIT_URL}/yoy_variance"
 
 
 st.markdown(f"""
