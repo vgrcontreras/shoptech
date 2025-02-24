@@ -259,4 +259,4 @@ Isso irá iniciar todos os serviços necessários para rodar o projeto. Aguarde 
 
 Após todos os containeres estarem em execução, abra o navegador e acesse http://localhost:8501 para ver sa aplicação  web em ação!
 
-Ou [clique aqui](http://localhost:8501)
+Ou [clique aqui](http://ec2-34-224-85-153.compute-1.amazonaws.com:8501/)
