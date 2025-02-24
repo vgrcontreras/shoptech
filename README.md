@@ -1,6 +1,6 @@
 # Shoptech: Projeto de Caso de Estudo em Engenharia de Dados
 
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+![Status](https://img.shields.io/badge/Status-Finalizado-green)
 
 Bem-vindo ao repositório do projeto fictício Shoptech, um e-commerce especializado em eletrônicos e gadgets, criado para fins de estudo e aplicação prática de conceitos de Engenharia de Dados.
 
