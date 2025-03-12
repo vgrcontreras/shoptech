@@ -347,7 +347,7 @@ The main objective of the Shoptech project is to create a complete environment t
 
 [Top ⤴︎](#contents)
 
-<img src='media/architecture.png' />
+<img src = 'media/architeture.png' />
 
 ## Project Structure
 
